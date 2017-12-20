@@ -1,0 +1,5 @@
+DO-NOT-SCRAPE.txt
+
+This file is included to prevent the scripts in this folder from scraping before the user is sure this is what they want to do. Scraping with incorrect settings could overwhelm servers, download large amounts of data, or take a long time. Confirm that the settings of the Scrapy spiders and scrapy.cfg file match your intentions, and the delete or rename this file to be able to scrape.
+
+The many podcasts are already included in the index and metadata, so this application can already be run without addtional scraping.

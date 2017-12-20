@@ -1,0 +1,4 @@
+*.pyc
+/Meta/PodcastDataSet/documents/
+/Scrapy/documents/
+/Scrapy/.scrapy/

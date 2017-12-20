@@ -1,0 +1,20 @@
+<!doctype html>
+<title>PODCAST SEARCH ENGINE</title>
+<h1>PODCAST SEARCH ENGINE</h1>
+<form>
+  <dl>
+    <input type=text name=searchTerm><input type=submit value="Search Podcasts">
+  </dl>
+</form>
+{% if searchTerm %}
+  {% if resultHTML %}
+    {% for result in resultHTML %}
+      <hr>
+      {% for row in result %}
+        {{row|safe}}
+      {% endfor %} 
+    {% endfor %} 
+  {% else %}
+    <p>Sorry, no results for <b>"{{searchTerm}}"</b></p>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,22 @@
+prefix = "."
+libsvm-modules = "metaSupportFiles/libsvm-modules/"
+punctuation = "metaSupportFiles/sentence-punctuation.txt"
+stop-words = "metaSupportFiles/stopwords.txt"
+start-exceptions = "metaSupportFiles/sentence-start-exceptions.txt"
+end-exceptions = "metaSupportFiles/sentence-end-exceptions.txt"
+function-words = "metaSupportFiles/function-words.txt"
+
+dataset = "PodcastDataSet"
+corpus = "file.toml"
+index = "idx"
+
+[[analyzers]]
+method = "ngram-word"
+ngram = 1
+filter = "default-unigram-chain"
+
+[ranker]
+method = "bm25"
+k1 = 1.2
+b = 0.75
+k3 = 500

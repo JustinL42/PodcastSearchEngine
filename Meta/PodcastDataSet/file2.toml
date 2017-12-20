@@ -1,0 +1,11 @@
+type = "file-corpus"
+list = "dataset2"
+encoding = "utf-8" 
+metadata = [{name = "docID", type = "string"},
+			{name = "podcast name", type = "string"},
+			{name = "episode name", type = "string"},
+			{name = "subsection", type = "string"},  
+			{name = "date published", type = "string"},
+			{name = "transcript url", type = "string"},
+			{name = "listen url", type = "string"},
+			{name = "atypical terms", type = "string"}]
