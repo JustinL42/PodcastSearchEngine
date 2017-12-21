@@ -13,8 +13,6 @@ class TranscriptPipeline(object):
 				  item.get('podcast_name', "unknown podcast"))
 			return item
 
-
-
 		if not os.path.exists(documentsDir):
 			os.makedirs(documentsDir)
 

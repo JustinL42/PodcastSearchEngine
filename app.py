@@ -50,7 +50,7 @@ def search():
 			else: 
 				result.append("</p>\n")
 
-			atypicalTerms = md.get('atypicalTerms')
+			atypicalTerms = md.get('atypical terms')
 			if exists(atypicalTerms):
 				result.append("<p>Atypical terms: " + underlineST(atypicalTerms, searchTerm) + "</p>\n")
 
@@ -58,14 +58,6 @@ def search():
 				"\">Read transcript</a> | <a href=\"" + md.get('listen url')  +
 				"\">Listen to episode</a></p>")
 
-			# result = ["<p>Podcast: <b>" + md.get('podcast name') + "</b></p>\n", 
-			# 		  md.get('episode title'),
-			# 		  md.get('atypicalTerms'),
-			# 		  doc[1], #score
-			# 		  md.get('date published'),
-			# 		  md.get('atypical terms'),
-			# 		  md.get('transcript url'),
-			# 		  md.get('listen url')]
 			resultHTML.append(result)
 
 	return render_template('page.html', searchTerm=searchTerm, resultHTML=resultHTML)

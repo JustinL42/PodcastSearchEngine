@@ -7,7 +7,6 @@ collection[3]="Invisibilia"
 collection[4]="All Things Considered"
 
 cd Meta
-
 for ((i=0;i<${#collection[*]};i++)); do
 	#create a config file for each podcast's collection
     cp config.toml config$i.toml
@@ -24,7 +23,16 @@ for ((i=0;i<${#collection[*]};i++)); do
 	#generate indexes for each collection
 	python refreshIndex.py $i
 
-
 done
+cd ..
 
+python generateAtypicalTerms.py
+
+cp Meta/PodcastDataSet/atypicalTerms.txt  Meta/PodcastDataSet/metadata.dat
+rm Meta/PodcastDataSet/atypicalTerms.txt
+rm -rfd Meta/idx
+
+cd Meta
+python refreshIndex.py
+cd ..
 

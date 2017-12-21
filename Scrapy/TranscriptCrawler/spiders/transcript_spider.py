@@ -3,7 +3,7 @@ from scrapy.loader import ItemLoader
 from TranscriptCrawler.items import PodcastTranscriptsItem
 
 class NPRSpider(scrapy.Spider):
-    max_iterations = 25
+    max_iterations = 2
     nprPodcastName = "NPR"
 
     def parse(self, response):
@@ -92,7 +92,7 @@ class TedRadioHourSpider(NPRSpider):
     start_urls = ['https://www.npr.org/programs/ted-radio-hour/archive']
 
 class AllThingsConsideredSpider(NPRSpider):
-    max_iterations = 8
+    max_iterations = 1
     name = "allthingsconsidered"
     nprPodcastName = "All Things Considered"
     start_urls = ['https://www.npr.org/programs/all-things-considered/archive']

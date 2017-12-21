@@ -16,5 +16,6 @@ cp Scrapy/metadata.dat  Meta/PodcastDataSet/metadata.dat
 cd Meta/PodcastDataSet
 ls -1 documents/* | awk '$0="[none] "$0' > dataset-full-corpus.txt 
 cd ..
-rm -rfd idx
-./refreshIndex.py
+rm -rfd idx*
+python refreshIndex.py
+cd ..
