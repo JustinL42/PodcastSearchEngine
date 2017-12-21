@@ -24,6 +24,7 @@ def search():
 		# invert index needs to be called in the config's folder
 		os.chdir(MetaDir)
 		idx = metapy.index.make_inverted_index('config.toml')
+		os.chdir("..")
 		ranker = metapy.index.OkapiBM25()
 		query = metapy.index.Document()
 		query.content(searchTerm)
@@ -61,3 +62,5 @@ def search():
 			resultHTML.append(result)
 
 	return render_template('page.html', searchTerm=searchTerm, resultHTML=resultHTML)
+
+app.run()
