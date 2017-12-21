@@ -3,7 +3,7 @@ from scrapy.loader import ItemLoader
 from TranscriptCrawler.items import PodcastTranscriptsItem
 
 class NPRSpider(scrapy.Spider):
-    max_iterations = 2
+    max_iterations = 3
     nprPodcastName = "NPR"
 
     def parse(self, response):
@@ -139,6 +139,7 @@ class FreakonomicsSpider(scrapy.Spider):
                 
 
     def parse_transcript(self, response):
+        print("parsing freakonomics transcript")
         l = ItemLoader(item=PodcastTranscriptsItem(), response=response)
         l.add_css('episode_title',  'h1.single_title')
         l.add_css('date_published', 'div.article_meta time')
